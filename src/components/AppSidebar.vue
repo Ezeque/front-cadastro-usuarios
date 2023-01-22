@@ -3,7 +3,7 @@
         <div id="directus-section">
             <p>Directus</p>
         </div>
-        <div class="menu-item" @click="tab = 'all_users'">
+        <div class="menu-item clickable" @click="tab = 'all_users'">
             <FolderIcon style="color:#6644ff; width: 20px; padding: 10px;"/>
             All Users
         </div>

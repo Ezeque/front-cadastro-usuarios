@@ -35,6 +35,10 @@ import { tab } from '@/services/TabsService'
   transition: all ease 125ms;
 }
 
+.clickable{
+  cursor: pointer;
+}
+
 .button:hover {
   background-color: #f0f4f9;
 }

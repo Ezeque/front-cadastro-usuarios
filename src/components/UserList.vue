@@ -12,8 +12,10 @@
                     <UserBlock :user="user" />
                 </div>
             </div>
-                <h5 class="" @click="tab='user'">Create User</h5>
-            </div>
+            <button type="button" class="clickable">
+                <h5 class="" @click="tab = 'user'">Create User</h5>
+            </button>
+        </div>
     </div>
 </template>
 <script setup>
@@ -30,7 +32,7 @@ onMounted(async () => {
 })
 </script>
 <style scoped>
-.user-list{
+.user-list {
     flex-wrap: wrap;
 }
 

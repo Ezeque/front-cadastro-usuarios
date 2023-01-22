@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="button"><ArchiveBoxArrowDownIcon/></button>
+    <button type="button" class="button clickable"><ArchiveBoxArrowDownIcon/></button>
 </template>
 <script setup>
 import {ArchiveBoxArrowDownIcon} from "@heroicons/vue/24/outline"

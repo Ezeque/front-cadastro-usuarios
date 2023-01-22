@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="button delete"><TrashIcon style="font-size:5px" @click="deleteUser(userDetails.id)"/></button>
+    <button type="button" class="button clickable delete" @click="deleteUser(userDetails.id)"><TrashIcon style="font-size:5px" /></button>
 </template>
 <script setup>
 import {TrashIcon} from "@heroicons/vue/24/outline"
