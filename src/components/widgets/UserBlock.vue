@@ -1,5 +1,5 @@
 <template>
-    <div style="width:160px">
+    <div class="clickable" style="width:160px">
         <div class="avatar-block">
         </div>
         <h4>{{`${user.firstName} ${user.lastName}`}}</h4>
