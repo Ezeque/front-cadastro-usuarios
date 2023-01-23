@@ -34,40 +34,20 @@
             </template>
         </FormInput>
         <DescriptionArea />
-        <BlockInput label="Tags" v-model="userData.tags" :table_field="userData.tags" />
+        <TagInput label="Tags" v-model="userData.tags" :table_field="userData.tags" />
     </form>
 </template>
-<script>
+<script setup>
 import { toRefs } from 'vue'
 import FormInput from './widgets/FormInput.vue';
-import BlockInput from './widgets/BlockInput.vue';
 import DescriptionArea from './widgets/DescriptionArea.vue';
 import FileInput from './widgets/FileInput.vue';
+import TagInput from './widgets/TagInput.vue';
 import { UserCircleIcon, EnvelopeIcon, LockClosedIcon, MapPinIcon, PencilIcon } from '@heroicons/vue/24/outline';
-import { userDetails } from '@/services/UserServices';
 import { checkFilled } from '@/services/FormServices'
+import { userDetails } from '@/services/UserServices';
 
-export default {
-    setup() {
-        const userData = toRefs(userDetails)
-        return {
-            checkFilled,
-            userData
-        }
-    },
-
-    components: {
-        FormInput,
-        BlockInput,
-        DescriptionArea,
-        UserCircleIcon,
-        EnvelopeIcon,
-        LockClosedIcon,
-        MapPinIcon,
-        PencilIcon,
-        FileInput
-    }
-}
+const userData = toRefs(userDetails)
 
 </script>
 <style>
