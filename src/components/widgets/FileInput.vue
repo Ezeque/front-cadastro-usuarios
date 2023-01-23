@@ -3,7 +3,10 @@
         <slot name="icon"></slot>
         <h4 class="label-text">{{ props.label }}</h4>
         <label style="width:100%" :for="label">
-            <div class="input-field file-input"> {{ userDetails.avatar.name }} </div>
+            <div class="input-field file-input">
+                <span v-if="userDetails.avatar"> {{ userDetails.avatar.name }} </span>
+                <span v-else style="color: #6644ff">Click to Browse Your Files</span>
+            </div>
         </label>
         <input visibility="hidden" class="input-file" type="file" :id="props.label" @change="updateAvatar"
             accept="image/*" />
@@ -24,8 +27,7 @@ const props = defineProps({
 })
 </script>
 <style scoped>
-
-.file-input{
+.file-input {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -34,7 +36,7 @@ const props = defineProps({
     cursor: pointer;
 }
 
-.file-input:hover{
+.file-input:hover {
     background-color: #f0f4f9;
 }
 
