@@ -17,7 +17,6 @@ const imagePreview = ref(null)
 const updateAvatar = (e) => {
     userDetails.avatar = e.target.files[0]
     imagePreview.value = URL.createObjectURL(e.target.files[0])
-    console.log(userDetails.avatar)
     userDetails.previewImage = imagePreview.value
 }
 const props = defineProps({
