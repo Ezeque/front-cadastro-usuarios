@@ -18,9 +18,9 @@ import { defineProps, ref } from 'vue';
 /* import { userDetails } from '@/services/UserServices.js' */
 const imagePreview = ref(null)
 const updateAvatar = (e) => {
-    userDetails.avatar = e.target.files[0]
     imagePreview.value = URL.createObjectURL(e.target.files[0])
     userDetails.previewImage = imagePreview.value
+    userDetails.avatar = userDetails.previewImage
 }
 const props = defineProps({
     label: String,

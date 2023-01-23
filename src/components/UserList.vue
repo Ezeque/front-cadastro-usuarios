@@ -10,6 +10,7 @@
             <div style="display:flex; justify-content: space-evenly; margin-bottom:20px;">
                 <div v-for="user in users" :key="user.id" class="user-list" @click="userClickHandler(user)">
                     <UserBlock :user="user" />
+                    {{ user }}
                 </div>
             </div>
             <button type="button" class="clickable">
