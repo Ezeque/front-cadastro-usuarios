@@ -20,9 +20,9 @@
                 <LockClosedIcon style="width:30px; color:#a2b5cd" />
             </template>
         </FormInput>
-        <BlockInput label="Avatar" v-model="userData.avatar">
+        <FileInput label="Avatar" v-model="userData.avatar">
             <template #icon> </template>
-        </BlockInput>
+        </FileInput>
         <FormInput label="Location" v-model="userData.location" :table_field="userData.location">
             <template #icon>
                 <MapPinIcon style="width:30px; color:#a2b5cd" />
@@ -41,7 +41,8 @@
 import { toRefs } from 'vue'
 import FormInput from './widgets/FormInput.vue';
 import BlockInput from './widgets/BlockInput.vue';
-import DescriptionArea from './widgets/DescriptionArea.vue'
+import DescriptionArea from './widgets/DescriptionArea.vue';
+import FileInput from './widgets/FileInput.vue';
 import { UserCircleIcon, EnvelopeIcon, LockClosedIcon, MapPinIcon, PencilIcon } from '@heroicons/vue/24/outline';
 import { userDetails } from '@/services/UserServices';
 import { checkFilled } from '@/services/FormServices'
@@ -63,7 +64,8 @@ export default {
         EnvelopeIcon,
         LockClosedIcon,
         MapPinIcon,
-        PencilIcon
+        PencilIcon,
+        FileInput
     }
 }
 
