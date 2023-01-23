@@ -4,7 +4,7 @@
         <div style="display:flex; flex-direction: column; flex-wrap: wrap;">
             <h3 class="user-name">{{ `${userDetails.firstName} ${userDetails.lastName}` }}</h3>
             <h4 class="user-email">{{ `${userDetails.email}` }}</h4>
-            <div style="text-align:left">
+            <div style="text-align:left" v-if="userDetails.title">
                 <span class="user-title">{{ userDetails.title }}</span>
             </div>
             
