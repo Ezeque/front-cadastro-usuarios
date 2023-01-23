@@ -25,5 +25,6 @@
     width: 100%;
     height: 164px;
     outline: none;
+    padding: 16px;
 }
 </style>
