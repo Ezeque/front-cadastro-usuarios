@@ -5,7 +5,7 @@
         <label style="width:100%" :for="label">
             <div class="input-field file-input">
                 <span v-if="userDetails.avatar"> {{ userDetails.avatar.name }} </span>
-                <span v-else style="color: #6644ff">Click to Browse Your Files</span>
+                <span v-else style="color: #a2b5cd">Click to Browse Your Files</span>
             </div>
         </label>
         <input visibility="hidden" class="input-file" type="file" :id="props.label" @change="updateAvatar"

@@ -6,7 +6,7 @@
             <div name="icon" class="tag-list" v-if="userDetails.tags.length > 0"> 
                 <span v-for="tag in (userDetails.tags)" :key="tag" class="tag clickable" @click="handleClick"> {{ tag }} </span>    
             </div>
-            <input class="input-field" :type="type" :id="label" v-model="tag" @keydown.enter="handleEnter" />
+            <input class="input-field tag-typing" :type="type" :id="label" v-model="tag" @keydown.enter="handleEnter" placeholder="Press Enter to Insert a Tag" />
         </div>
         
     </div>
@@ -48,6 +48,14 @@ defineProps({
     margin-bottom: 10px;
 }
 
+.tag-typing{
+    color: #172940;
+    font-weight: bold;
+}
+
+.tag-typing ::placeholder{
+    color: #a2b5cd !important;
+}
 .tag{
     background-color: #f0f4f9;
     padding: 10px;
