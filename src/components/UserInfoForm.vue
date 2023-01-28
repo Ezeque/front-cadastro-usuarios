@@ -49,7 +49,7 @@
 
         <!-- ANCHOR  INPUT DE DESCRIÇÃO -->
         <DescriptionArea />
-        
+
         <!-- ANCHOR  INPUT DE TAGS -->
         <TagInput label="Tags" v-model="userData.tags" :table_field="userData.tags" />
     </form>
@@ -65,7 +65,6 @@ import { checkFilled } from '@/services/FormServices'
 import { userDetails } from '@/services/UserServices';
 
 const userData = toRefs(userDetails)
-
 </script>
 <style>
 .inputsPannel {
