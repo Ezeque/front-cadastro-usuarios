@@ -4,7 +4,7 @@
         <h4 class="label-text">{{ props.label }}</h4>
         <label style="width:100%" :for="label">
             <div class="input-field file-input">
-                <span v-if="userDetails.avatar"> {{ userDetails.avatar.name }} </span>
+                <span v-if="userDetails.avatar"> {{ fileName }} </span>
                 <span v-else style="color: #a2b5cd">Click to Browse Your Files</span>
             </div>
         </label>
@@ -17,8 +17,10 @@ import { userDetails } from '@/services/UserServices';
 import { defineProps, ref } from 'vue';
 /* import { userDetails } from '@/services/UserServices.js' */
 const imagePreview = ref(null)
+const fileName = ref(null)
 const updateAvatar = (e) => {
     imagePreview.value = URL.createObjectURL(e.target.files[0])
+    fileName.value = e.target.files[0].name
     userDetails.previewImage = imagePreview.value
     userDetails.avatar = userDetails.previewImage
 }
