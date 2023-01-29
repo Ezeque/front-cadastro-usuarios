@@ -1,21 +1,47 @@
 <template>
-    <div class="clickable" style="width:160px">
-        <div class="avatar-block">
+    <div class="clickable avatar-block">
+        <div class="avatar-circle" :style="avatarBlockStyle">
         </div>
-        <h4>{{`${user.firstName} ${user.lastName}`}}</h4>
-    </div>    
+        <div class="user-block-id">
+            <h4 class="user-name">{{`${props.user.firstName} ${props.user.lastName}`}}</h4>
+            <span class="user-title">{{ props.user.title }}</span>
+        </div>
+        {{ user }}
+    </div>
 </template>
 <script setup>
-import { defineProps } from 'vue';
-defineProps({
+import { defineProps, reactive } from 'vue';
+const props = defineProps({
     user: Object
 })
+
+const avatarBlockStyle = reactive({
+    backgroundImage: `url(${props.user.avatar})`,
+    backgroundRepeat: `no-repeat`,
+    backgroundSize: `cover`,
+    width: 160,
+})
 </script>
-<style>
+<style scoped>
+.user-block-id{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-name{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.avatar-circle{
+    margin: 0;
+    margin-bottom: 10px;
+}
 .avatar-block {
-    width: 160px;
-    height: 160px;
-    background-color: #f0f4f9;
-    margin-bottom : 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 </style>

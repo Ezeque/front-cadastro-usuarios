@@ -6,7 +6,7 @@
             <div name="icon" class="tag-list" v-if="userDetails.tags.length > 0"> 
                 <span v-for="tag in (userDetails.tags)" :key="tag" class="tag clickable" @click="handleClick"> {{ tag }} </span>    
             </div>
-            <input class="input-field tag-typing" :type="type" :id="label" v-model="tag" @keydown.enter="handleEnter" placeholder="Press Enter to Insert a Tag" />
+            <input class="input-field tag-typing" :type="type" :id="input_id" v-model="tag" @keydown.enter="handleEnter" placeholder="Press Enter to Insert a Tag" />
         </div>
         
     </div>
@@ -32,6 +32,7 @@ const handleClick = (e)=>{
 defineProps({
     type: String,
     label: String,
+    input_id: String
 })
 </script>
 <style scoped>

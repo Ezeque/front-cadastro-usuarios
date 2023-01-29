@@ -1,5 +1,5 @@
 <template>
-    <button :disabled="!formFilled" type="button" class="button clickable" @click="createUser(userDetails)"><CheckIcon/></button>
+    <button :disabled="!formFilled" type="button" class="button clickable" id="confirm-btn" @click="createUser(userDetails)"><CheckIcon/></button>
 </template>
 <script setup>
 import {CheckIcon} from "@heroicons/vue/20/solid"

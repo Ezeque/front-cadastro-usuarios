@@ -2,7 +2,7 @@
     <div class="container">
         <h4 class="label-text"> {{ label }} </h4>
         <div class="input-field">
-            <input :type="type" :id="label" v-model="inputValue" />
+            <input :type="type" :id="input_id" v-model="inputValue" />
             <slot name="icon" class="input-icon"> </slot>
         </div>
     </div>
@@ -13,7 +13,8 @@ import { ref } from 'vue';
 const props = defineProps({
     type: String,
     label: String,
-    table_field: Object
+    table_field: Object,
+    input_id: String
 })
 const inputValue = ref(props.table_field)
 </script>

@@ -3,14 +3,13 @@
         <AppSidebar />
         <div style="width: 83vw;">
             <div id="page-name">
-                <h1 class="title">User Directory</h1>
+                <h1 class="title">All Users</h1>
             </div>
 
             <!-- Listagem de usuários -->
             <div style="display:flex; justify-content: space-evenly; margin-bottom:20px;">
                 <div v-for="user in users" :key="user.id" class="user-list" @click="userClickHandler(user)">
                     <UserBlock :user="user" />
-                    {{ user }}
                 </div>
             </div>
             <button type="button" class="clickable">

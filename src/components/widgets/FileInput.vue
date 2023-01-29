@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        {{ userDetails }}
         <slot name="icon"></slot>
         <h4 class="label-text">{{ props.label }}</h4>
         <label style="width:100%" :for="label">
@@ -8,8 +9,8 @@
                 <span v-else style="color: #a2b5cd">Click to Browse Your Files</span>
             </div>
         </label>
-        <input visibility="hidden" class="input-file" type="file" :id="props.label" @change="updateAvatar"
-            accept="image/*" />
+        <input visibility="hidden" class="input-file" type="file" @change="updateAvatar"
+            accept="image/*" :id="input_id"/>
     </div>
 </template>
 <script setup>
@@ -20,12 +21,13 @@ const imagePreview = ref(null)
 const fileName = ref(null)
 const updateAvatar = (e) => {
     imagePreview.value = URL.createObjectURL(e.target.files[0])
-    fileName.value = e.target.files[0].name
-    userDetails.previewImage = imagePreview.value
-    userDetails.avatar = userDetails.previewImage
+    fileName.value = e.target.files[0]
+    userDetails.avatar = fileName.value
+    console.log(userDetails.avatar)
 }
 const props = defineProps({
     label: String,
+    input_id: String
 })
 </script>
 <style scoped>

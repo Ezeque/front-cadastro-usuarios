@@ -1,57 +1,57 @@
 <template>
     <form class="inputsPannel">
         <!-- ANCHOR  INPUT DE PRIMEIRO NOME -->
-        <FormInput label="First Name" :table_field="userData.firstName" @change="checkFilled(userData)">
+        <FormInput label="First Name" :table_field="userData.firstName" @change="checkFilled(userData)" input_id="first-name">
             <template #icon>
                 <UserCircleIcon style="width:30px; color:#a2b5cd" />
             </template>
         </FormInput>
 
         <!-- ANCHOR  INPUT DE SEGUNDO NOME -->
-        <FormInput label="Last Name" :table_field="userData.lastName" @change="checkFilled(userData)">
+        <FormInput label="Last Name" :table_field="userData.lastName" @change="checkFilled(userData)" input_id="last-name">
             <template #icon>
                 <UserCircleIcon style="width:30px; color:#a2b5cd" />
             </template>
         </FormInput>
 
-        <!-- ANCHOR  INPUT DE EMAIL -->
-        <FormInput label="Email" :table_field="userData.email" @change="checkFilled(userData)">
+        <!-- ANCHOR  INPUT DE EMAIL --> 
+        <FormInput label="Email" :table_field="userData.email" @change="checkFilled(userData)" input_id="email">
             <template #icon>
                 <EnvelopeIcon style="width:30px; color:#a2b5cd" />
             </template>
         </FormInput>
 
         <!-- ANCHOR  INPUT DE PASSWORD -->
-        <FormInput label="Password" type="password" :table_field="userData.password" @change="checkFilled(userData)">
+        <FormInput label="Password" type="password" :table_field="userData.password" @change="checkFilled(userData)" input_id="password">
             <template #icon>
                 <LockClosedIcon style="width:30px; color:#a2b5cd" />
             </template>
         </FormInput>
 
         <!-- ANCHOR  INPUT DE AVATAR -->
-        <FileInput label="Avatar" v-model="userData.avatar">
+        <FileInput label="Avatar" v-model="userData.avatar" input_id="avatar">
             <template #icon> </template>
         </FileInput>
 
         <!-- ANCHOR  INPUT DE lOCALIDADE -->
-        <FormInput label="Location" v-model="userData.location" :table_field="userData.location">
+        <FormInput label="Location" v-model="userData.location" :table_field="userData.location" input_id="location">
             <template #icon>
                 <MapPinIcon style="width:30px; color:#a2b5cd" />
             </template>
         </FormInput>
 
         <!-- ANCHOR  INPUT DE TITLE -->
-        <FormInput label="Title" v-model="userData.title" :table_field="userData.title">
+        <FormInput label="Title" v-model="userData.title" :table_field="userData.title" input_id="title">
             <template #icon>
                 <PencilIcon style="width:30px; color:#a2b5cd" />
             </template>
         </FormInput>
 
         <!-- ANCHOR  INPUT DE DESCRIÇÃO -->
-        <DescriptionArea />
+        <DescriptionArea  input_id="description"/>
 
         <!-- ANCHOR  INPUT DE TAGS -->
-        <TagInput label="Tags" v-model="userData.tags" :table_field="userData.tags" />
+        <TagInput label="tags" v-model="userData.tags" :table_field="userData.tags"  input_id="tags"/>
     </form>
 </template>
 <script setup>

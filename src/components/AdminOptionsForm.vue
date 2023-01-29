@@ -16,6 +16,7 @@ import FormSelect from './widgets/FormSelect.vue';
 import BlockInput from './widgets/BlockInput.vue';
 import FormInput from './widgets/FormInput.vue';
 import { UserCircleIcon } from '@heroicons/vue/20/solid';
+
 </script>
 <style scoped>
 .inputsPannel{

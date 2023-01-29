@@ -1,11 +1,14 @@
 <template>
     <div class="container">
         <h4 class="label-text"> Description </h4>
-        <textarea id="descriptionArea" resize="false"></textarea>
+        <textarea :id="input_id" class="descriptionArea" resize="false"></textarea>
     </div>
 </template>
-<script>
-
+<script setup>
+import { defineProps } from 'vue';
+defineProps({
+    input_id: String
+})
 </script>
 <style scoped>
 .label-text {
@@ -17,7 +20,7 @@
     width: 100%;
 }
 
-#descriptionArea {
+.descriptionArea {
     
     border: 2px solid #d3dae4;
     border-radius: 6px;
